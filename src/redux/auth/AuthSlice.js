@@ -6,7 +6,7 @@ import {
   loginUser,
   logoutUser,
   fetchCurrentUser,
-} from './AuthOperation';
+} from './AuthOperations';
 
 const initialState = {
   user: { name: null, email: null },
@@ -98,4 +98,4 @@ export const authSlice = createSlice({
   },
 });
 
-export const getAuth = state => state.auth;
+export const getAuth = (state) => state.auth;

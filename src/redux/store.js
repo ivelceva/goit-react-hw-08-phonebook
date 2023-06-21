@@ -1,10 +1,6 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { contactsReducer } from './contactSlice';
-import { filterReducer } from './filterSlice';
-import storage from 'redux-persist/lib/storage';
+import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,22 +8,27 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { contactSlice } from './contactSlice';
+import { AuthSlice } from './auth/AuthSlice';
+import { filterSlice } from './filterSlice';
 
-export const rootReducers = combineReducers({
-  contacts: contactsReducer,
-  filter: filterReducer,
-});
-
-const persistConfig = {
-  key: 'phonebook',
+const authenticationPersistConfig = {
+  key: 'auth',
   storage,
-  whitelist: ['contacts'],
+  whitelist: ['token'],
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducers);
-
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    contacts: contactSlice.reducer,
+    filter: filterSlice.reducer,
+    authentication: persistReducer(
+      authenticationPersistConfig,
+      AuthSlice.reducer
+    ),
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -38,3 +39,42 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
+// import { configureStore, combineReducers } from '@reduxjs/toolkit';
+// import { contactsReducer } from './contactSlice';
+// import { filterReducer } from './filterSlice';
+// import storage from 'redux-persist/lib/storage';
+// import {
+//   persistStore,
+//   persistReducer,
+//   FLUSH,
+//   REHYDRATE,
+//   PAUSE,
+//   PERSIST,
+//   PURGE,
+//   REGISTER,
+// } from 'redux-persist';
+
+// export const rootReducers = combineReducers({
+//   contacts: contactsReducer,
+//   filter: filterReducer,
+// });
+
+// const persistConfig = {
+//   key: 'phonebook',
+//   storage,
+//   whitelist: ['contacts'],
+// };
+
+// const persistedReducer = persistReducer(persistConfig, rootReducers);
+
+// export const store = configureStore({
+//   reducer: persistedReducer,
+//   middleware: getDefaultMiddleware =>
+//     getDefaultMiddleware({
+//       serializableCheck: {
+//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//       },
+//     }),
+// });
+
+// export const persistor = persistStore(store);
