@@ -71,7 +71,7 @@ export const AuthSlice = createSlice({
       state.isLoggedIn = false;
       state.user = { name: null, email: null };
       state.token = null;
-      toast.success('Successfully logged out! Waiting for you to come back!', {
+      toast.success('Successfully logged out! See you soon!', {
         theme: 'dark',
       });
     },
