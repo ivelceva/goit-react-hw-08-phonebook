@@ -7,7 +7,8 @@ import css from './Layouts.module.css';
 const Layouts = () => {
   return (
     <div className={css.menuContainer}>
-      <h1 className={css.title}>Phonebook</h1>
+      <h1 className={css.title}>Welcome to Phonebook!</h1>
+      <p className={css.subTitle}>Please, sign up / sign in to continue</p>
       <UserMenu />
       <Suspense fallback={<Loader />}>
         <Outlet />
