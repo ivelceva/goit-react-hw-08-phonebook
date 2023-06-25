@@ -29,6 +29,9 @@ body {
     margin-top: 100px;
     text-align: center;
     color: #708090;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+               5px 4px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 .subTitle {
