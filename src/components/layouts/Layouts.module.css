@@ -1,0 +1,32 @@
+body {
+   height: 200px;
+   background-color: red; 
+   background-image: linear-gradient(to right, red , yellow);
+}
+
+.menuContainer {
+    background: #fff;
+    border-color: rgba(34,60,80,.2);
+    border-style: solid;
+    bottom: 20px;
+    box-shadow: 0 5px 10px 2px rgba(34,60,80,.2);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    max-width: 1170px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.title {
+    font-size: 60px;
+    margin-top: 100px;
+    text-align: center;
+}
+

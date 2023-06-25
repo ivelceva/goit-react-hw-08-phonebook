@@ -1,0 +1,23 @@
+.menuWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    background-color: #ff9999 ;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    margin: 60px;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 240px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.link:hover {
+    background-color: #cc4e5c;
+}
