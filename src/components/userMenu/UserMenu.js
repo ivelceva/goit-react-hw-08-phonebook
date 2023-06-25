@@ -31,10 +31,10 @@ export const UserMenu = () => {
       ) : (
         <div className={css.menuWrapper}>
           <NavLink to="/register" className={css.link}>
-            Register
+            Sign Up
           </NavLink>
           <NavLink to="/login" className={css.link}>
-            Login
+            Sign In
           </NavLink>
         </div>
       )}
