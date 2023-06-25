@@ -98,4 +98,4 @@ export const AuthSlice = createSlice({
   },
 });
 
-export const getAuth = (state) => state.auth;
+export const getAuth = (state) => state.authentication.isLoadingUser;
