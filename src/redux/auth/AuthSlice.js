@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-
-import {
-  registerUser,
-  loginUser,
-  logoutUser,
-  fetchCurrentUser,
-} from './AuthOperations';
+import { registerUser, loginUser, logoutUser, fetchCurrentUser } from './AuthOperations';
 
 const initialState = {
   user: { name: null, email: null },
