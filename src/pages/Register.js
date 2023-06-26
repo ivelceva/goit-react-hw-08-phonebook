@@ -1,5 +1,5 @@
 import { RegisterForm } from 'components/signUpForm/SignUp';
 
-const Login = () => <RegisterForm />;
+const Register = () => <RegisterForm />;
 
-export default Login;
+export default Register;

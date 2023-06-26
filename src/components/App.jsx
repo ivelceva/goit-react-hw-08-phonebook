@@ -11,19 +11,10 @@ import { PrivateRoute } from './routes/PrivateRoute';
 import { PublicRoute } from './routes/PublicRoute';
 import { Loader } from './loader/Loader';
 
-const SignUp = lazy(() =>
-  import('../components/signUpForm/SignUp')
-);
-
-const SignIn = lazy(() =>
-  import('../components/signInForm/SignIn')
-);
-
+const SignUp = lazy(() => import('../components/signUpForm/SignUp'));
+const SignIn = lazy(() => import('../components/signInForm/SignIn'));
 const Phonebook = lazy(() => import('./phonebook/Phonebook'));
-
-const PageNotFound = lazy(() =>
-  import('./pageNotFound/PageNotFound')
-);
+const PageNotFound = lazy(() => import('./pageNotFound/PageNotFound'));
 
 function App() {
   const dispatch = useDispatch();
