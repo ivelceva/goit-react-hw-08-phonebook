@@ -29,9 +29,7 @@ const App = () => {
         alignItems: 'center',
         height: '100vh',
       }}
-    >
-    
-    </div>
+    ></div>
   ) : (
     <Routes>
       <Route path={Routes.home} element={<Layouts />}>
@@ -71,91 +69,57 @@ const App = () => {
 
 export default App;
 
-// import React from 'react';
-// import { lazy, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+// import { useEffect, lazy } from 'react';
+// import { useDispatch } from 'react-redux';
 // import { Routes, Route } from 'react-router-dom';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import { fetchCurrentUser } from 'redux/auth/AuthOperations';
-// import { getAuth } from 'redux/auth/AuthSlice';
-// import  Layouts from './layouts/Layouts';
-// import { PrivateRoute } from './routes/PrivateRoute';
-// import { PublicRoute } from './routes/PublicRoute';
-// import { Loader } from './loader/Loader';
+// import { Layouts } from 'components/layouts/Layouts';
+// import { refreshUser } from '../redux/auth/ope';
+// //import { Home } from '../pages/Home';
+// import { Register } from '../pages/Register';
+// import { LogIn } from '../pages/LogIn';
+// import { Contacts } from '../pages/Contacts';
+// import { RestrictedRoute } from './RestrictedRoute';
+// import { PrivateRoute } from './PrivateRoute';
+// import { useAuth } from 'hooks';
 
-// const Register = lazy(() => import('pages/Register'));
-// const LogIn = lazy(() => import('pages/LogIn'));
-// const Phonebook = lazy(() => import('./phonebook/Phonebook'));
-// const PageNotFound = lazy(() => import('./pageNotFound/PageNotFound'));
+// const Home = lazy(() => import('pages/Home'));
 
-// function App() {
+// export const App = () => {
 //   const dispatch = useDispatch();
-//   const { isLoadingUser } = useSelector(getAuth);
+//   const { isRefreshing } = useAuth();
 
 //   useEffect(() => {
-//     dispatch(fetchCurrentUser());
+//     dispatch(refreshUser());
 //   }, [dispatch]);
-//   return (
-//     <>
-//       {isLoadingUser ? (
-//         <Loader />
-//       ) : (
-//         <Routes>
-//           <Route path="/" element={<Layouts />}>
-//             <Route
-//               path="/register"
-//               element={
-//                 <PublicRoute>
-//                   <Register />
-//                 </PublicRoute>
-//               }
-//             />
-//             <Route
-//               path="/login"
-//               element={
-//                 <PublicRoute>
-//                   <LogIn />
-//                 </PublicRoute>
-//               }
-//             />
-//             <Route
-//               path="/contacts"
-//               element={
-//                 <PrivateRoute>
-//                   <Phonebook />
-//                 </PrivateRoute>
-//               }
-//             />
-//             <Route path="*" element={<PageNotFound />} />
-//           </Route>
-//         </Routes>
-//       )}
-//       <ToastContainer autoClose={2000} />
-//     </>
-//   );
-// }
 
-// export default App;
-
-// import React from 'react';
-// import ContactForm from './contactForm/ContactForm';
-// import Filter from './filter/Filter';
-// import ContactList from './contactList/ContactList';
-// import { UserMenu } from './userMenu/UserMenu';
-// import css from './App.module.css';
-
-// const App = () => {
-//   return (
-//     <div>
-//       <h1 className={css.title}>Phonebook</h1>
-//       <ContactForm />
-//       <h2 className={css.title}>Contacts</h2>
-//       <Filter />
-//       <ContactList />
-//       <UserMenu />
-//     </div>
+//   return isRefreshing ? (
+//     <b>Refreshing user...</b>
+//   ) : (
+//     <Routes>
+//       <Route path="/" element={<Layouts />}>
+//         <Route index element={<Home />} />
+//         <Route
+//           path="register"
+//           element={
+//             <RestrictedRoute
+//               redirectTo="/contacts"
+//               component={<Register />}
+//             />
+//           }
+//         />
+//         <Route
+//           path="login"
+//           element={
+//             <RestrictedRoute redirectTo="/contacts" component={<LogIn />} />
+//           }
+//         />
+//         <Route
+//           path="contacts"
+//           element={
+//             <PrivateRoute redirectTo="/login" component={<Contacts />} />
+//           }
+//         />
+//       </Route>
+//     </Routes>
 //   );
 // };
-
-// export default App;
