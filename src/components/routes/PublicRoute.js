@@ -1,12 +1,12 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth } from 'components/hooks/UseAuth';
-import { Routes } from './Routes';
+import { UseAuth } from 'components/hooks/UseAuth';
+import { ProjectRoutes } from './ProjectRoutes';
 
 export const PublicRoute = ({
   component: Component,
-  redirectTo = Routes.home,
+  redirectTo = ProjectRoutes.home,
 }) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = UseAuth();
   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 };
 
