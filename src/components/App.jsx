@@ -22,14 +22,7 @@ const App = () => {
   }, [dispatch]);
 
   return isFetchingCurrentUser ? (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
-    ></div>
+    <b>Fetching user...</b>
   ) : (
     <Routes>
       <Route path={ProjectRoutes.home} element={<Layouts />}>
@@ -61,7 +54,10 @@ const App = () => {
             />
           }
         />
-        <Route path={Routes.notFound} element={<Navigate to={ProjectRoutes.home} />} />
+        <Route
+          path={Routes.notFound}
+          element={<Navigate to={ProjectRoutes.home} />}
+        />
       </Route>
     </Routes>
   );
