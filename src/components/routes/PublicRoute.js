@@ -1,14 +1,19 @@
 import { Navigate } from 'react-router-dom';
 import { UseAuth } from 'components/hooks/UseAuth';
-import { ProjectRoutes } from './ProjectRoutes';
 
-export const PublicRoute = ({
-  component: Component,
-  redirectTo = ProjectRoutes.home,
-}) => {
+export const PublicRoute = ({ component: Component, redirectTo = '/' }) => {
   const { isLoggedIn } = UseAuth();
+
   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 };
+
+// export const PublicRoute = ({
+//   component: Component,
+//   redirectTo = ProjectRoutes.home,
+// }) => {
+//   const { isLoggedIn } = UseAuth();
+//   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
+// };
 
 // import { Navigate } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
