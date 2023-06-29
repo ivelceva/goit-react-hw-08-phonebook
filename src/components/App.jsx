@@ -8,10 +8,10 @@ import { fetchCurrentUser } from 'redux/auth/AuthOperations';
 import { UseAuth } from './hooks/UseAuth';
 import { ProjectRoutes } from './routes/ProjectRoutes';
 
-const Home = lazy(() => import('pages/Home'));
-const Register = lazy(() => import('pages/Register'));
-const LogIn = lazy(() => import('pages/LogIn'));
-const Contacts = lazy(() => import('pages/Contacts'));
+const Home = lazy(() => import('../pages/Home'));
+const Register = lazy(() => import('../pages/Register'));
+const LogIn = lazy(() => import('../pages/LogIn'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 const App = () => {
   const dispatch = useDispatch();
