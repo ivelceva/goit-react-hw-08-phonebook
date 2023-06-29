@@ -1,0 +1,30 @@
+/* =============== SIGN UP STYLES ===================== */
+.form {
+    background-color: var(--background);
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    transition: all .25s cubic-bezier(.4,0,.2,1);
+    width: 400px;
+}
+
+.formTitle {
+    text-align: center;
+}
+
+.formName {
+    display: contents;
+}
+
+.formLabel {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: blue
+}
