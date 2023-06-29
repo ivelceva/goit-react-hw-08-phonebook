@@ -8,10 +8,10 @@ import { fetchCurrentUser } from 'redux/auth/AuthOperations';
 import { UseAuth } from './hooks/UseAuth';
 import { ProjectRoutes } from './routes/ProjectRoutes';
 
-const HomePage = lazy(() => import('pages/Home'));
+const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
-const LoginPage = lazy(() => import('pages/LogIn'));
-const ContactsPage = lazy(() => import('pages/Contacts'));
+const LogIn = lazy(() => import('pages/LogIn'));
+const Contacts = lazy(() => import('pages/Contacts'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,33 +25,18 @@ const App = () => {
     <b>Fetching user...</b>
   ) : (
     <Routes>
-      <Route path={ProjectRoutes.home} element={<Layouts />}>
-        <Route index element={<HomePage />} />
-        <Route
-          path={ProjectRoutes.register}
-          element={
-            <PublicRoute
-              redirectTo={ProjectRoutes.contacts}
-              component={<Register />}
-            />
+      <Route path='/' element={<Layouts />}>
+        <Route index element={<Home />} />
+        <Route path='register' element={
+            <PublicRoute redirectTo='/contacts' component={<Register />}/>
           }
         />
-        <Route
-          path={ProjectRoutes.login}
-          element={
-            <PublicRoute
-              redirectTo={ProjectRoutes.contacts}
-              component={<LoginPage />}
-            />
+        <Route path='login' element={
+            <PublicRoute redirectTo='/contacts' component={<LogIn />}/>
           }
         />
-        <Route
-          path={ProjectRoutes.contacts}
-          element={
-            <PrivateRoute
-              redirectTo={ProjectRoutes.login}
-              component={<ContactsPage />}
-            />
+        <Route path='contacts' element={
+            <PrivateRoute redirectTo='/login' component={<Contacts />}/>
           }
         />
         <Route
