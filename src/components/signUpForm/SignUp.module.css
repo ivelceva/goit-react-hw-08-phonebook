@@ -10,10 +10,20 @@
 
 .formTitle {
     text-align: center;
+    margin-bottom: 45px;
+    color: #997a8d;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+               5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.formLabelWrapper {
+    margin-bottom: 65px;
 }
 
 .formName {
     display: contents;
+    font-weight: 700;
+    color: #645452;
 }
 
 .formLabel {
@@ -21,10 +31,34 @@
     display: flex;
     justify-content: center;
     margin-bottom: 35px;
+    gap: 5px;
 }
 
 input {
   outline: 0;
   border-width: 0 0 2px;
-  border-color: blue
+  border-color: #bebebe;
 }
+
+.formInput:focus {
+  border-bottom: 2px solid #ff4500;
+}
+
+.signUpBtn {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 35px;
+    padding: 10px;
+    font-weight: 700;
+    background-color: #bc8f8f;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+}
+
+.signUpBtn:hover {
+    background-color: #ff4500;
+}
+

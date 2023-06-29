@@ -21,20 +21,22 @@ const RegisterForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <h1 className={css.formTitle}>Registration form</h1>
-      <label className={css.formLabel}>
-        <p className={css.formName}>Username: </p>
-        <input type="text" name="name" />
-      </label>
-      <label className={css.formLabel}>
-        <p className={css.formName}>Email: </p>
-        <input type="email" name="email" />
-      </label>
-      <label className={css.formLabel}>
-        <p className={css.formName}>Password: </p>
-        <input type="password" name="password" />
-      </label>
-      <button className={css.formBtn} type="submit">
-        Register
+      <div className={css.formLabelWrapper}>
+        <label className={css.formLabel}>
+          <p className={css.formName}>Username: </p>
+          <input className={css.formInput} type="text" name="name" />
+        </label>
+        <label className={css.formLabel}>
+          <p className={css.formName}>Email: </p>
+          <input className={css.formInput} type="email" name="email" />
+        </label>
+        <label className={css.formLabel}>
+          <p className={css.formName}>Password: </p>
+          <input className={css.formInput} type="password" name="password" />
+        </label>
+      </div>
+      <button className={css.signUpBtn} type="submit">
+        SIGN UP
       </button>
     </form>
   );
