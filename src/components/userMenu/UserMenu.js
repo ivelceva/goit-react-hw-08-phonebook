@@ -17,9 +17,9 @@ export const UserMenu = () => {
 
   return (
     <nav className={css.navWrapper}>
-      {isLoggedIn ? (
+      {isLoggedIn && user ? (
         <div className={css.userWrapper}>
-          <p className={css.welcomeName}>Welcome, ${user.name}!</p>
+          <p className={css.welcomeName}>Welcome, {user.name}!</p>
           <button type="button" className={css.button} onClick={onLogoutClick}>
             Log Out
           </button>
