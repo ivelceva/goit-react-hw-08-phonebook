@@ -20,7 +20,7 @@ export const UserMenu = () => {
       {isLoggedIn && user ? (
         <div className={css.userWrapper}>
           <p className={css.welcomeName}>Welcome, {user.name}!</p>
-          <button type="button" className={css.button} onClick={onLogoutClick}>
+          <button type="button" className={css.logOutBtn} onClick={onLogoutClick}>
             Log Out
           </button>
         </div>
