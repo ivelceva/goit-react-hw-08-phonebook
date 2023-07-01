@@ -75,3 +75,12 @@ input {
     text-decoration: underline;
 }
 
+.linkToSignIn {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: #645452;
+    gap: 15px;
+}
+

@@ -39,9 +39,12 @@ const RegisterForm = () => {
       <button className={css.signUpBtn} type="submit">
         SIGN UP
       </button>
-      <NavLink to="/" className={css.linkToHome}>
-        Home
-      </NavLink>
+      <p className={css.linkToSignIn}>
+        Already have an account? 
+        <NavLink to="/login" className={css.linkToHome}>
+          Sign In
+        </NavLink>
+      </p>
     </form>
   );
 };
