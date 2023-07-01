@@ -28,7 +28,7 @@ const RegisterForm = () => {
           <input className={css.formInput} type="text" name="name" />
         </label>
         <label className={css.formLabel}>
-          <p className={css.formName}>Email: </p>
+          <p className={css.formName}>E-mail: </p>
           <input className={css.formInput} type="email" name="email" />
         </label>
         <label className={css.formLabel}>
