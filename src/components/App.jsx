@@ -25,18 +25,22 @@ const App = () => {
     <b>Fetching user...</b>
   ) : (
     <Routes>
-      <Route path='/' element={<Layouts />}>
+      <Route path="/" element={<Layouts />}>
         <Route index element={<Home />} />
-        <Route path='register' element={
-            <PublicRoute redirectTo='/contacts' component={<Register />}/>
+        <Route
+          path="register"
+          element={
+            <PublicRoute redirectTo="/contacts" component={<Register />} />
           }
         />
-        <Route path='login' element={
-            <PublicRoute redirectTo='/contacts' component={<LogIn />}/>
-          }
+        <Route
+          path="login"
+          element={<PublicRoute redirectTo="/contacts" component={<LogIn />} />}
         />
-        <Route path='contacts' element={
-            <PrivateRoute redirectTo='/login' component={<Contacts />}/>
+        <Route
+          path="contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
           }
         />
         <Route
@@ -49,15 +53,6 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
 
 // import { useEffect, lazy } from 'react';
 // import { useDispatch } from 'react-redux';

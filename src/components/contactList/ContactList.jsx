@@ -1,7 +1,7 @@
 import UserContact from '../userContact/UserContact';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
-import { deleteContact } from '../../redux/ContactsOperations';
+import { deleteContact } from 'redux/operations';
 import css from './ContactList.module.css';
 
 const ContactList = () => {
@@ -10,9 +10,9 @@ const ContactList = () => {
   const filter = useSelector(getFilter);
 
   const contactSearch = contacts.filter(({ name }) => {
-      return name.toLowerCase().includes(filter.toLowerCase());
+    return name.toLowerCase().includes(filter.toLowerCase());
   });
- 
+
   return (
     <ul className={css.list}>
       {contactSearch.map(({ name, number, id }) => (
@@ -31,5 +31,3 @@ const ContactList = () => {
 };
 
 export default ContactList;
-
-

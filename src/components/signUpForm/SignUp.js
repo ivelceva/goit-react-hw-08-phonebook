@@ -28,7 +28,7 @@ const RegisterForm = () => {
           <input className={css.formInput} type="text" name="name" />
         </label>
         <label className={css.formLabel}>
-          <p className={css.formName}>E-mail: </p>
+          <p className={css.formName}>Email: </p>
           <input className={css.formInput} type="email" name="email" />
         </label>
         <label className={css.formLabel}>
@@ -40,7 +40,7 @@ const RegisterForm = () => {
         SIGN UP
       </button>
       <p className={css.linkToSignIn}>
-        Already have an account? 
+        Already have an account?
         <NavLink to="/login" className={css.linkToHome}>
           Sign In
         </NavLink>
