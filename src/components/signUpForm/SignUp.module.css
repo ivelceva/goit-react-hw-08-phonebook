@@ -72,5 +72,6 @@ input {
 
 .linkToHome:hover {
     color: #ff4500;
+    text-decoration: underline;
 }
 
