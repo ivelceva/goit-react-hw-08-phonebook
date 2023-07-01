@@ -24,11 +24,11 @@ const LoginForm = () => {
         <h1 className={css.formTitle}>Login form</h1>
         <div className={css.formLabelWrapper}>
           <label className={css.formLabel}>
-            <p className={css.formName}>Email</p>
+            <p className={css.formName}>Email:</p>
             <input className={css.formInput} type="email" name="email" />
           </label>
           <label className={css.formLabel}>
-            <p className={css.formName}>Password</p>
+            <p className={css.formName}>Password:</p>
             <input className={css.formInput} type="password" name="password" />
           </label>
         </div>
