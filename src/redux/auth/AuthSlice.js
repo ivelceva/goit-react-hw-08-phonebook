@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
-import { registerUser, loginUser, logoutUser, fetchCurrentUser } from './AuthOperations';
+
+import {
+  registerUser,
+  loginUser,
+  logoutUser,
+  fetchCurrentUser,
+} from './AuthOperations';
 
 const initialState = {
   user: { name: null, email: null },
@@ -25,36 +30,25 @@ export const AuthSlice = createSlice({
       state.isLoggedIn = true;
       state.token = payload.token;
       state.user = payload.user;
-      toast.success('Successfully registered!', {
-        theme: 'dark',
-      });
     },
     [registerUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
-      toast.error('Something went wrong, try again!', {
-        theme: 'dark',
-      });
     },
     [loginUser.pending](state) {
       state.isLoading = true;
       state.error = null;
     },
     [loginUser.fulfilled](state, { payload }) {
+      console.log('payload', payload);
       state.isLoading = false;
       state.isLoggedIn = true;
       state.token = payload.token;
       state.user = payload.user;
-      toast.success('Successfully logged in!', {
-        theme: 'dark',
-      });
     },
     [loginUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
-      toast.error('Something went wrong, try again!', {
-        theme: 'dark',
-      });
     },
     [logoutUser.pending](state) {
       state.isLoading = true;
@@ -65,16 +59,10 @@ export const AuthSlice = createSlice({
       state.isLoggedIn = false;
       state.user = { name: null, email: null };
       state.token = null;
-      toast.success('Successfully logged out! See you soon!', {
-        theme: 'dark',
-      });
     },
     [logoutUser.rejected](state, { payload }) {
       state.isLoading = false;
       state.error = payload;
-      toast.error('Something is wrong, try again later!', {
-        theme: 'dark',
-      });
     },
     [fetchCurrentUser.pending](state) {
       state.isLoadingUser = true;
@@ -91,5 +79,3 @@ export const AuthSlice = createSlice({
     },
   },
 });
-
-export const getAuth = (state) => state.auth.isLoading;
