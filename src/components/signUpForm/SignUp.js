@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { registerUser } from 'redux/auth/AuthOperations';
 import css from './SignUp.module.css';
 
@@ -38,6 +39,9 @@ const RegisterForm = () => {
       <button className={css.signUpBtn} type="submit">
         SIGN UP
       </button>
+      <NavLink to="/" className={css.linkToHome}>
+        Home
+      </NavLink>
     </form>
   );
 };

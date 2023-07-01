@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { loginUser } from 'redux/auth/AuthOperations';
 import css from 'components/signUpForm/SignUp.module.css';
 
@@ -34,6 +35,9 @@ const LoginForm = () => {
         <button className={css.signUpBtn} type="submit">
           SIGN IN
         </button>
+        <NavLink to="/" className={css.linkToHome}>
+          Home
+        </NavLink>
       </form>
     </>
   );
