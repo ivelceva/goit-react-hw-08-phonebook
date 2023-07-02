@@ -22,7 +22,7 @@ export const UserMenu = () => {
         <div className={css.userWrapper}>
           <p className={css.welcomeName}>Welcome, ${user.name}!</p>
           <button type="button" className={css.userMenuBtn} onClick={onLogoutClick}>
-            Log Out
+            Sign Out
           </button>
         </div>
       ) : null}
