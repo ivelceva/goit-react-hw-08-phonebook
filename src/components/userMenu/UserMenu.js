@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { UseAuth } from 'components/hooks/UseAuth';
 
 import { logoutUser } from 'redux/auth/AuthOperations';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import css from './UserMenu.module.css';
 
 export const UserMenu = () => {
@@ -21,10 +21,9 @@ export const UserMenu = () => {
       {isLoggedIn ? (
         <div className={css.userWrapper}>
           <p className={css.welcomeName}>Welcome, ${user.name}!</p>
-          <button type="button" className={css.button} onClick={onLogoutClick}>
+          <button type="button" className={css.userMenuBtn} onClick={onLogoutClick}>
             Log Out
           </button>
-          <Link to="/contacts">go to contacts</Link>
         </div>
       ) : null}
     </nav>
