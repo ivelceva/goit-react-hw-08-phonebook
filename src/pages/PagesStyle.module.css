@@ -49,23 +49,12 @@
                 rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
             }
 
+.formTitle {
+    text-align: center;
+    margin-bottom: 45px;
+    color: #997a8d;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+               5px 4px 0px rgba(0, 0, 0, 0.15);
+}
 
-/* .menuContainer {
-    background: #fff;
-    border-color: rgba(34,60,80,.2);
-    border-style: solid;
-    bottom: 20px;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    left: 0;
-    margin: auto;
-    max-width: 1170px;
-    padding-bottom: 24px;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: absolute;
-    right: 0;
-    top: 20px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-} */
+

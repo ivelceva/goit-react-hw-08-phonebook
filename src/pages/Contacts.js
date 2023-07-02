@@ -4,6 +4,7 @@ import ContactList from '../components/contactList/ContactList';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { useDispatch } from 'react-redux';
+import css from './PagesStyle.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -12,9 +13,8 @@ const Contacts = () => {
   }, [dispatch]);
   return (
     <div>
+      <h2 className={css.formTitle}>Contacts</h2>
       <ContactForm />
-
-      <h2>Contacts</h2>
       <Filter />
       <ContactList />
     </div>

@@ -14,7 +14,7 @@ const ContactList = () => {
   });
 
   return (
-    <ul className={css.list}>
+    <ul className={css.contactList}>
       {contactSearch.map(({ name, number, id }) => (
         <li className={css.user} key={id}>
           <UserContact name={name} number={number} />
