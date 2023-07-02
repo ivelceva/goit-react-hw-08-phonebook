@@ -25,15 +25,15 @@ const RegisterForm = () => {
       <div className={css.formLabelWrapper}>
         <label className={css.formLabel}>
           <p className={css.formName}>Username: </p>
-          <input className={css.formInput} type="text" name="name" />
+          <input className={css.formInput} type="text" name="name" required />
         </label>
         <label className={css.formLabel}>
           <p className={css.formName}>Email: </p>
-          <input className={css.formInput} type="email" name="email" />
+          <input className={css.formInput} type="email" name="email" required />
         </label>
         <label className={css.formLabel}>
           <p className={css.formName}>Password: </p>
-          <input className={css.formInput} type="password" name="password" />
+          <input className={css.formInput} type="password" name="password" required />
         </label>
       </div>
       <button className={css.signUpBtn} type="submit">
