@@ -15,7 +15,7 @@ const Filter = () => {
   return (
     <div className={css.contactsFilter}>
       <label>
-        <p className={css.find}>Find contacts by name</p>
+        <p className={css.find}>Find contacts by name:</p>
         <input
           className={css.input}
           name="filter"

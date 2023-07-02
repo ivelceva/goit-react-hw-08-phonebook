@@ -19,7 +19,7 @@ const ContactList = () => {
         <li className={css.user} key={id}>
           <UserContact name={name} number={number} />
           <button
-            className={css.btn}
+            className={css.contactListBtn}
             onClick={() => dispatch(deleteContact(id))}
           >
             Delete

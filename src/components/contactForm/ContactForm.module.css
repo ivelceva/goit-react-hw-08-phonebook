@@ -8,7 +8,29 @@
   margin: 0 auto;
 }
 
+.contactFormName {
+  font-weight: 700;
+  color: #555555;
+}
 
+.inputNumber {
+  margin-right: 25px;
+}
+
+.contactFormBtn {
+  width: 100px;
+  height: 25px;
+  color: #838996;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.contactFormBtn:hover {
+  background-color:  #ff7e00;
+  color: #fff;
+}
 
 
 
