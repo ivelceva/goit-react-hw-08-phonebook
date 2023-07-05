@@ -33,7 +33,12 @@ const RegisterForm = () => {
         </label>
         <label className={css.formLabel}>
           <p className={css.formName}>Password: </p>
-          <input className={css.formInput} type="password" name="password" required />
+          <input
+            className={css.formInput}
+            type="password"
+            name="password"
+            required
+          />
         </label>
       </div>
       <button className={css.signUpBtn} type="submit">
@@ -50,5 +55,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-
-

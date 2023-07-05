@@ -3,17 +3,14 @@ import { useDispatch } from 'react-redux';
 import { UseAuth } from 'components/hooks/UseAuth';
 
 import { logoutUser } from 'redux/auth/AuthOperations';
-import { useNavigate } from 'react-router-dom';
 import css from './UserMenu.module.css';
 
 export const UserMenu = () => {
   const { isLoggedIn, user } = UseAuth();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const onLogoutClick = () => {
     dispatch(logoutUser());
-    navigate('/login');
   };
 
   return (
@@ -21,7 +18,11 @@ export const UserMenu = () => {
       {isLoggedIn ? (
         <div className={css.userWrapper}>
           <p className={css.welcomeName}>Welcome, ${user.name}!</p>
-          <button type="button" className={css.userMenuBtn} onClick={onLogoutClick}>
+          <button
+            type="button"
+            className={css.userMenuBtn}
+            onClick={onLogoutClick}
+          >
             Sign Out
           </button>
         </div>
@@ -29,5 +30,3 @@ export const UserMenu = () => {
     </nav>
   );
 };
-
-

@@ -8,9 +8,11 @@ import css from './PagesStyle.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
   return (
     <div>
       <h2 className={css.formTitle}>Contacts</h2>

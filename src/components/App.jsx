@@ -15,13 +15,13 @@ const Contacts = lazy(() => import('../pages/Contacts'));
 
 const App = () => {
   const dispatch = useDispatch();
-  const { isFetchingCurrentUser } = UseAuth();
+  const { isRefreshing } = UseAuth();
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  return isFetchingCurrentUser ? (
+  return isRefreshing ? (
     <b>Fetching user...</b>
   ) : (
     <Routes>
